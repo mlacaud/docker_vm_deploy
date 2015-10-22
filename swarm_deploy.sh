@@ -5,9 +5,9 @@
 sudo docker-machine create -d virtualbox local
 
 eval "$(docker-machine env local)"
-
+echo "after eval"
 sudo docker pull swarm
-
+echo "after pull"
 token=$(sudo docker run swarm create)
 
 echo 'Token = $token'
