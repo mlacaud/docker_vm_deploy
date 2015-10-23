@@ -2,20 +2,20 @@
 #Script for Ubuntu 14.04
 
 
-sudo docker-machine create -d virtualbox local
+#sudo docker-machine create -d virtualbox local
 
-eval "$(docker-machine env local)"
-echo "after eval"
-sudo docker pull swarm
+#eval "$(docker-machine env local)"
+#echo "after eval"
+docker pull swarm
 echo "after pull"
-token=$(sudo docker run swarm create)
+token=$(docker run swarm create)
 
-echo 'Token = $token'
+echo "Token = ${token}"
 
-sudo docker-machine create -d virtualbox --swarm --swarm-master --swarm-discovery token://$token swarm-master
+docker-machine create -d virtualbox --swarm --swarm-master --swarm-discovery token://${token} swarm-master
 
-sudo docker-machine create -d virtualbox --swarm --swarm-discovery token://$token swarm-agent-00
-sudo docker-machine create -d virtualbox --swarm --swarm-discovery token://$token swarm-agent-01
-sudo docker-machine create -d virtualbox --swarm --swarm-discovery token://$token swarm-agent-02
+docker-machine create -d virtualbox --swarm --swarm-discovery token://${token} swarm-agent-00
+docker-machine create -d virtualbox --swarm --swarm-discovery token://${token} swarm-agent-01
+docker-machine create -d virtualbox --swarm --swarm-discovery token://${token} swarm-agent-02
 
-eval $(docker-machine env --swarm swarm-master)
+#eval $(docker-machine env --swarm swarm-master)
