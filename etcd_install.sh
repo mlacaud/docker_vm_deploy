@@ -8,7 +8,7 @@ cd etcd-v2.2.1-linux-amd64
 
 sudo cp ./etcd /usr/local/bin/etcd
 sudo chmod +x /usr/local/bin/etcd
-sudo cp ./etcdctl /usr/local/bin/etcd
+sudo cp ./etcdctl /usr/local/bin/etcdctl
 sudo chmod +x /usr/local/bin/etcdctl
 
 cd ..

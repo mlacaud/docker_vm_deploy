@@ -3,4 +3,4 @@
 
 sudo ./deploy/docker_deploy.sh
 sudo ./deploy/docker_compose_deploy.sh
-sudo ./deploy/docker_machine_deploy.#!/bin/sh
+sudo ./deploy/docker_machine_deploy.sh
