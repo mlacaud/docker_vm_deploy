@@ -17,5 +17,3 @@ docker-machine create -d virtualbox --swarm --swarm-master --swarm-discovery tok
 docker-machine create -d virtualbox --swarm --swarm-discovery token://${token} swarm-agent-00
 docker-machine create -d virtualbox --swarm --swarm-discovery token://${token} swarm-agent-01
 docker-machine create -d virtualbox --swarm --swarm-discovery token://${token} swarm-agent-02
-
-#eval $(docker-machine env --swarm swarm-master)
