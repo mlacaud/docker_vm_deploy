@@ -27,7 +27,7 @@ frontend:
 worker:
   dns:
     - "8.8.8.8"
-  image: nherbaut/worker
+  image: nherbaut/worker:jdev
   links:
     - "broker:amqp"
 storage:
