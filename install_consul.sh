@@ -10,6 +10,6 @@ sudo mv ./consul /usr/local/bin
 sudo mkdir /etc/consul.d
 sudo mkdir /etc/consul.d/server
 
-echo '{"bootstrap_expect": 1, "server": true,	"data_dir": "/tmp/consul",	"log_level": "INFO",	"enable_syslog": false,	"client_addr": "0.0.0.0"}' > config.json
+echo '{"bootstrap": false, "server": true,	"data_dir": "/tmp/consul",	"log_level": "INFO",	"enable_syslog": false,	"client_addr": "0.0.0.0"}' > config.json
 
 sudo mv ./config.json /etc/consul.d/server/config.json
