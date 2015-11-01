@@ -7,6 +7,7 @@ sudo unzip *.zip
 sudo rm *.zip
 sudo mv ./consul /usr/local/bin
 
+sudo mkdir /etc/consul.d
 sudo mkdir /etc/consul.d/server
 
 echo '{"bootstrap_expect": 1, "server": true,	"data_dir": "/tmp/consul",	"log_level": "INFO",	"enable_syslog": false,	"client_addr": "0.0.0.0"}' > config.json
