@@ -14,10 +14,12 @@ fi
 
 if [[ (! $(which docker)) && (! $(which docker.io)) ]]
 then
-	echo "[INSTALL] docker"
-	wget -qO- https://get.docker.com/ | sh
+	echo "No docker installation. Starting the download."
+else
+	sudo service docker stop
 fi
-
+echo "[INSTALL] docker"
+wget -qO- https://get.docker.com/ | sh
 sudo service docker start
 
 # Add the current user to the group
