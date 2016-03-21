@@ -7,14 +7,14 @@ box:
     - "broker:amqp"
   name: box
   ports:
-    - "8081"
+    - "8081:8085"
 broker:
   dns:
     - "8.8.8.8"
   expose:
     - "5672"
   ports:
-    - "5672"
+    - "5672:5672"
   image: "rabbitmq:3.5.3"
 frontend:
   dns:
@@ -23,8 +23,14 @@ frontend:
   links:
     - "box:box"
   ports:
-    - "8080"
-worker:
+    - "8080:8080"
+worker1:
+  dns:
+    - "8.8.8.8"
+  image: nherbaut/worker:jdev
+  links:
+    - "broker:amqp" 
+worker2:
   dns:
     - "8.8.8.8"
   image: nherbaut/worker:jdev
@@ -37,4 +43,4 @@ storage:
   links:
     - "box:box"
   ports:
-    - "8082"
+    - "8082:8082"
