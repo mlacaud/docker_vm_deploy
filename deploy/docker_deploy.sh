@@ -24,6 +24,6 @@ sudo service docker start
 
 # Add the current user to the group
 echo "Current user will be added to the group docker"
-sudo usermod -a -G docker ${USER}
+sudo usermod -aG docker ${USER}
 sudo service docker restart
 #newgrp docker

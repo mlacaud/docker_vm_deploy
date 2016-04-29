@@ -28,7 +28,7 @@ then
         fi
 
         echo "[INSTALL] docker-machine"
-        curl -L https://github.com/docker/machine/releases/download/v0.5.0/docker-machine_linux-amd64.zip >machine.zip && \
+        curl -L https://github.com/docker/machine/releases/download/v0.6.0/docker-machine_linux-amd64.zip >machine.zip && \
         unzip machine.zip && \
         rm machine.zip && \
         sudo mv docker-machine* /usr/local/bin
